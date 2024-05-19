@@ -1,15 +1,21 @@
+// components/CreateSearchForm.tsx
 import React, { useState } from 'react';
 
-const CreateSearchForm = () => {
-  const [fields, setFields] = useState([]);
-  const [newField, setNewField] = useState({ name: '', type: 'text' });
+interface Field {
+  name: string;
+  type: string;
+}
+
+const CreateSearchForm: React.FC = () => {
+  const [fields, setFields] = useState<Field[]>([]);
+  const [newField, setNewField] = useState<Field>({ name: '', type: 'text' });
 
   const addField = () => {
     setFields([...fields, newField]);
     setNewField({ name: '', type: 'text' });
   };
 
-  const handleInputChange = (e) => {
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
     setNewField((prev) => ({ ...prev, [name]: value }));
   };
