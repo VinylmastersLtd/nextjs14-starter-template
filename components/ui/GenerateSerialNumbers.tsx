@@ -1,3 +1,5 @@
+"use client";
+
 // components/GenerateSerialNumbers.tsx
 import React, { useState } from 'react';
 
