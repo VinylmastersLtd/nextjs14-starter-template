@@ -11,9 +11,9 @@ export default function CustomSignUpPage() {
     const [phoneNumber, setPhoneNumber] = useState("");
     const [address, setAddress] = useState("");
     const [company, setCompany] = useState("");
-    const [error, setError] = useState(null);
+    const [error, setError] = useState<string | null>(null);
 
-    const handleSignUp = async (e) => {
+    const handleSignUp = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         if (!isLoaded) return;
 
@@ -31,7 +31,7 @@ export default function CustomSignUpPage() {
 
             await signUp.prepareEmailAddressVerification({ strategy: "email_code" });
             alert("Check your email for the verification code!");
-        } catch (err) {
+        } catch (err: any) {
             console.error("Error:", err);
             setError(err.errors[0]?.message || "An unexpected error occurred.");
         }
