@@ -104,9 +104,11 @@ export function NavBar() {
             </NavigationMenu>
             <div className="flex items-center gap-3 max-[825px]:hidden">
 
-                <Link href="/dashboard" className="max-[825px]:hidden">
-                    <Button size="sm">Dashboard</Button>
-                </Link>
+               <Link href={userId ? "/dashboard" : "/sign-in"} legacyBehavior passHref>
+                <Button variant="outline">
+                    Dashboard
+                </Button>
+            </Link>
                 {userId && <Profile />}
                 <ModeToggle />
             </div>
