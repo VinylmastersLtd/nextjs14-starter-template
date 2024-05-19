@@ -53,6 +53,4 @@ export default function MarketingPage() {
           <ManagePage formId={formId} />
         </div>
       </div>
-    </PageWrapper>
-  )
-}
+   ​⬤
