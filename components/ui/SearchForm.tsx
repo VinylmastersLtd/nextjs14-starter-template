@@ -1,3 +1,5 @@
+"use client";
+
 // components/SearchForm.tsx
 import React, { useState } from 'react';
 
