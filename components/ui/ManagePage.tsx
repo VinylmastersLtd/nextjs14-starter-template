@@ -1,3 +1,5 @@
+"use client";
+
 // components/ManagePage.tsx
 import React, { useState } from 'react';
 
