@@ -61,11 +61,11 @@ export function NavBar() {
                                 </Link>
                             </DialogClose>
                             <DialogClose asChild>
-                                <Link href="/dashboard" legacyBehavior passHref className="cursor-pointer">
-                                    <Button variant="outline">
-                                        Dashboard
-                                    </Button>
-                                </Link>
+                                <Link href={userId ? "/dashboard" : "/sign-in"} legacyBehavior passHref className="cursor-pointer">
+                <Button variant="outline">
+                    Dashboard
+                </Button>
+            </Link>
                             </DialogClose>
                         </div>
                     </SheetContent>
