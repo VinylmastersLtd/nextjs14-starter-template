@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import React, { useState } from "react"; // Ensure useState is imported from React
 import PageWrapper from "@/components/Container/PageWrapper";
 import { useSignUp } from "@clerk/nextjs";
 
@@ -21,7 +21,6 @@ export default function CustomSignUpPage() {
             await signUp.create({
                 emailAddress: email,
                 password,
-                // Store additional fields in publicMetadata
                 publicMetadata: {
                     phoneNumber,
                     address,
