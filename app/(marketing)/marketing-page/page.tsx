@@ -10,24 +10,6 @@ import { Metadata } from 'next'
 import Link from 'next/link'
 import React, { useState } from 'react'
 
-export const metadata: Metadata = {
-  metadataBase: new URL("https://starter.rasmic.xyz"),
-  keywords: [''],
-  title: 'Marketing page',
-  openGraph: {
-    description: 'Put description of the page.',
-    images: ['']
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: 'Marketing page',
-    description: 'Put jjjj of the page.',
-    siteId: "",
-    creator: "@rasmickyy",
-    creatorId: "",
-    images: [''],
-  },
-}
 
 export default function MarketingPage() {
   const [serialNumbers, setSerialNumbers] = useState([]);
