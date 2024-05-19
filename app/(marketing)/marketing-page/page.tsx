@@ -42,7 +42,7 @@ export default function MarketingPage() {
           Example Marketing Page
         </h1>
         <p className="mx-auto max-w-[600px] text-gray-500 md:text-md text-center mt-2 dark:text-gray-400">
-          Use this static page to have an explainer video with CTA and some copy.
+          Use this static page to have an emjjjxplainer video with CTA and some copy.
         </p>
         <Link href="/dashboard" className="mt-2">
           <Button>Get Started</Button>
