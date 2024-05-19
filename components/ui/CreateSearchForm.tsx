@@ -1,56 +1,72 @@
 "use client";
 
-// components/CreateSearchForm.tsx
 import React, { useState } from 'react';
 
-interface Field {
+interface MetaField {
   name: string;
-  type: string;
+  value: string;
 }
 
-const CreateSearchForm: React.FC = () => {
-  const [fields, setFields] = useState<Field[]>([]);
-  const [newField, setNewField] = useState<Field>({ name: '', type: 'text' });
+interface SerialNumber {
+  id: string;
+  metaFields: MetaField[];
+  createdAt: Date;
+  expiryDate: Date;
+}
 
-  const addField = () => {
-    setFields([...fields, newField]);
-    setNewField({ name: '', type: 'text' });
+interface GenerateSerialNumbersProps {
+  addSerialNumber: (serialNumber: SerialNumber) => void;
+}
+
+const GenerateSerialNumbers: React.FC<GenerateSerialNumbersProps> = ({ addSerialNumber }) => {
+  const [metaFields, setMetaFields] = useState<MetaField[]>([]);
+  const [newMetaField, setNewMetaField] = useState<MetaField>({ name: '', value: '' });
+
+  const handleAddSerialNumber = () => {
+    const expiryDate = new Date(); // Modify to add custom expiry date logic
+    const newSerialNumber: SerialNumber = {
+      id: Date.now().toString(),
+      metaFields: metaFields,
+      createdAt: new Date(),
+      expiryDate: expiryDate,
+    };
+    addSerialNumber(newSerialNumber);
+    setMetaFields([]);
   };
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
+  const addMetaField = () => {
+    setMetaFields([...metaFields, newMetaField]);
+    setNewMetaField({ name: '', value: '' });
+  };
+
+  const handleMetaFieldChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
-    setNewField((prev) => ({ ...prev, [name]: value }));
+    setNewMetaField((prev) => ({ ...prev, [name]: value }));
   };
 
   return (
     <div>
-      <h2>Create Search Form</h2>
+      <h2>Generate Serial Numbers</h2>
       <div>
         <input
           type="text"
           name="name"
-          placeholder="Field Name"
-          value={newField.name}
-          onChange={handleInputChange}
+          placeholder="Meta Field Name"
+          value={newMetaField.name}
+          onChange={handleMetaFieldChange}
         />
-        <select
-          name="type"
-          value={newField.type}
-          onChange={handleInputChange}
-        >
-          <option value="text">Text</option>
-          <option value="number">Number</option>
-          <option value="date">Date</option>
-        </select>
-        <button onClick={addField}>Add Field</button>
+        <input
+          type="text"
+          name="value"
+          placeholder="Meta Field Value"
+          value={newMetaField.value}
+          onChange={handleMetaFieldChange}
+        />
+        <button onClick={addMetaField}>Add Meta Field</button>
       </div>
-      <ul>
-        {fields.map((field, index) => (
-          <li key={index}>{`${field.name} (${field.type})`}</li>
-        ))}
-      </ul>
+      <button onClick={handleAddSerialNumber}>Generate Serial Number</button>
     </div>
   );
 };
 
-export default CreateSearchForm;
+export default GenerateSerialNumbers;
