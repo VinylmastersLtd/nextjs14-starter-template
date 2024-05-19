@@ -1,21 +1,31 @@
 "use client";
 
-import PageWrapper from '@/components/Container/PageWrapper'
-import { Button } from '@/components/ui/button'
+import PageWrapper from '@/components/Container/PageWrapper';
+import { Button } from '@/components/ui/button';
 import CreateSearchForm from '@/components/ui/CreateSearchForm';
 import GenerateSerialNumbers from '@/components/ui/GenerateSerialNumbers';
 import SearchForm from '@/components/ui/SearchForm';
 import ManagePage from '@/components/ui/ManagePage';
-import { Metadata } from 'next'
-import Link from 'next/link'
-import React, { useState } from 'react'
+import Link from 'next/link';
+import React, { useState } from 'react';
 
+interface MetaField {
+  name: string;
+  value: string;
+}
+
+interface SerialNumber {
+  id: string;
+  metaFields: MetaField[];
+  createdAt: Date;
+  expiryDate: Date;
+}
 
 export default function MarketingPage() {
-  const [serialNumbers, setSerialNumbers] = useState([]);
+  const [serialNumbers, setSerialNumbers] = useState<SerialNumber[]>([]);
   const [formId] = useState(Date.now().toString());
 
-  const addSerialNumber = (serialNumber) => {
+  const addSerialNumber = (serialNumber: SerialNumber) => {
     setSerialNumbers([...serialNumbers, serialNumber]);
   };
 
