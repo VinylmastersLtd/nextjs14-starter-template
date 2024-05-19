@@ -21,7 +21,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Marketing page',
-    description: 'Put description of the page.',
+    description: 'Put jjjj of the page.',
     siteId: "",
     creator: "@rasmickyy",
     creatorId: "",
