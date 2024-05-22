@@ -2,6 +2,7 @@ import PageWrapper from "@/components/Container/PageWrapper";
 import { AccordionComponent } from "@/components/LandingPage/AccordionComponent";
 import BlogSample from "@/components/LandingPage/BlogSamples";
 import Footer from "@/components/LandingPage/Footer";
+import { GoogleGeminiEffect } from "@/components/LandingPage/GoogleGeminiEffect";
 import HeroSection from "@/components/LandingPage/HeroSection";
 import MarketingCards from "@/components/LandingPage/MarketingCards";
 import PricingPage from "@/components/LandingPage/Pricing";
@@ -24,6 +25,12 @@ export default function Home() {
       </div>
       <div className="flex justify-center items-center w-full mt-[5rem] mb-[9rem]">
         <AccordionComponent />
+      </div>
+      <div className="flex justify-center items-center w-full mt-[5rem] mb-[9rem]">
+        <AccordionComponent />
+      </div>
+      <div className="flex justify-center items-center w-full mt-[5rem] mb-[9rem]">
+        <GoogleGeminiEffect pathLengths={[]} />
       </div>
       {/* <div className="w-full">
         <Footer />
