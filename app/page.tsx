@@ -8,7 +8,7 @@ import Footer from "@/components/LandingPage/Footer";
 import HeroSection from "@/components/LandingPage/HeroSection";
 import MarketingCards from "@/components/LandingPage/MarketingCards";
 import PricingPage from "@/components/LandingPage/Pricing";
-import { GoogleGeminiEffect } from "@/components/LandingPage/google-gemini-effect";
+import { GoogleGeminiEffect } from "@/components/LandingPage/GoogleGeminiEffect";
 
 export default function Home() {
   return (
