@@ -1,3 +1,5 @@
+"use client";
+
 import { useEffect } from "react";
 import { useMotionValue } from "framer-motion";
 import PageWrapper from "@/components/Container/PageWrapper";
