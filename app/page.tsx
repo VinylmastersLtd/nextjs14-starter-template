@@ -1,3 +1,5 @@
+import { useEffect } from "react";
+import { useMotionValue } from "framer-motion";
 import PageWrapper from "@/components/Container/PageWrapper";
 import { AccordionComponent } from "@/components/LandingPage/AccordionComponent";
 import BlogSample from "@/components/LandingPage/BlogSamples";
@@ -8,9 +10,24 @@ import PricingPage from "@/components/LandingPage/Pricing";
 import { GoogleGeminiEffect } from "@/components/LandingPage/google-gemini-effect";
 
 export default function Home() {
+  const pathLengths = [
+    useMotionValue(0),
+    useMotionValue(0),
+    useMotionValue(0),
+    useMotionValue(0),
+    useMotionValue(0),
+  ];
+
+  useEffect(() => {
+    pathLengths.forEach((mv, index) => {
+      setTimeout(() => {
+        mv.set(1); // animate to full length over time
+      }, 1000 * index);
+    });
+  }, [pathLengths]);
+
   return (
     <PageWrapper>
-
       <div className="mt-[1rem] p-3">
         <HeroSection />
       </div>
@@ -27,7 +44,7 @@ export default function Home() {
         <AccordionComponent />
       </div>
       <div className="flex justify-center items-center w-full mt-[5rem] mb-[9rem]">
-        <GoogleGeminiEffect pathLengths={[]} />
+        <GoogleGeminiEffect pathLengths={pathLengths} />
       </div>
       {/* <div className="w-full">
         <Footer />
