@@ -1,3 +1,5 @@
+"use client";
+
 import PageWrapper from "@/components/Container/PageWrapper";
 import { AccordionComponent } from "@/components/LandingPage/AccordionComponent";
 import BlogSample from "@/components/LandingPage/BlogSamples";
@@ -7,8 +9,6 @@ import MarketingCards from "@/components/LandingPage/MarketingCards";
 import PricingPage from "@/components/LandingPage/Pricing";
 import { useScroll, useTransform } from "framer-motion";
 import { GoogleGeminiEffect } from "@/components/ui/google-gemini-effect";
-
-"use client"
 
 import React from "react";
 export default function Home() {
