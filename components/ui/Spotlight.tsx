@@ -1,3 +1,4 @@
+// components/ui/Spotlight.tsx
 import React from "react";
 import { cn } from "@/utils/cn";
 
@@ -10,7 +11,7 @@ export const Spotlight = ({ className, fill }: SpotlightProps) => {
   return (
     <svg
       className={cn(
-        "animate-spotlight pointer-events-none absolute z-[1]  h-[169%] w-[138%] lg:w-[84%] opacity-0",
+        "animate-spotlight pointer-events-none absolute inset-0 z-[1] h-full w-full opacity-0",
         className
       )}
       xmlns="http://www.w3.org/2000/svg"

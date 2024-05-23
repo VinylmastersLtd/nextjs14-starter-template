@@ -10,10 +10,12 @@ import {SpotlightPreview} from "@/components/LandingPage/SpotlightPreview";  // 
 
 export default function Home() {
   return (
+
+    
     <PageWrapper>
-<div className="mt-[1rem] p-3">
-        <SpotlightPreview />
-      </div>
+    <div className="h-screen">
+      <SpotlightPreview />
+    </div>
       <div className="mt-[1rem] p-3">
         <HeroSection />
       </div>
