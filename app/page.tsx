@@ -6,6 +6,7 @@ import HeroSection from "@/components/LandingPage/HeroSection";
 import MarketingCards from "@/components/LandingPage/MarketingCards";
 import PricingPage from "@/components/LandingPage/Pricing";
 import {SpotlightPreview} from "@/components/LandingPage/SpotlightPreview";  // Import SpotlightPreview
+import { StickyScrollRevealDemo } from "@/components/LandingPage/StickyScroll";  // Import SpotlightPreview
 
 
 export default function Home() {
@@ -13,6 +14,9 @@ export default function Home() {
 
     
     <PageWrapper>
+      <div className="h-screen">
+      <StickyScrollRevealDemo />
+    </div>
     <div className="h-screen">
       <SpotlightPreview />
     </div>
