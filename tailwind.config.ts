@@ -8,17 +8,14 @@ const {
 } = require("tailwindcss/lib/util/flattenColorPalette");
 
 const config: Config = {
-  // Merging the content arrays and removing duplicates
   content: [
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/**/*.{ts,tsx}",
   ],
-  // Enabling dark mode
-  darkMode: "class", // Assuming you want to enable dark mode based on the class strategy
+  darkMode: "class",
   theme: {
-    // Merging container configuration from the second file
     container: {
       center: true,
       padding: "2rem",
@@ -27,13 +24,10 @@ const config: Config = {
       },
     },
     extend: {
-      // Merging backgroundImage from the first file
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "gradient-conic":
-          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+        "gradient-conic": "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
-      // Merging colors, borderRadius, keyframes, and animation from the second file
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
@@ -123,6 +117,16 @@ const config: Config = {
             transform: "scale(1)",
           },
         },
+        spotlight: {
+          "0%": {
+            opacity: 0,
+            transform: "translate(-72%, -62%) scale(0.5)",
+          },
+          "100%": {
+            opacity: 1,
+            transform: "translate(-50%,-40%) scale(1)",
+          },
+        },
       },
       animation: {
         gradient: "gradient 8s linear infinite",
@@ -132,13 +136,12 @@ const config: Config = {
         "accordion-up": "accordion-up 0.2s ease-out",
         "border-beam": "border-beam calc(var(--duration)*1s) infinite linear",
         "background-shine": "background-shine 2s linear infinite",
+        spotlight: "spotlight 2s ease .75s 1 forwards",
       },
     },
   },
-  // Merging plugins, adding any unique plugins from both files
   plugins: [
-    require("tailwindcss-animate"), // Assuming require is resolved in your environment
-    // Add other unique plugins here
+    require("tailwindcss-animate"),
     function ({ matchUtilities, theme }: any) {
       matchUtilities(
         {
@@ -161,7 +164,6 @@ const config: Config = {
         { values: flattenColorPalette(theme("backgroundColor")), type: "color" }
       );
     },
-
   ],
 };
 

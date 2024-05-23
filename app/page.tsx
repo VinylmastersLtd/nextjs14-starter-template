@@ -8,11 +8,14 @@ import Footer from "@/components/LandingPage/Footer";
 import HeroSection from "@/components/LandingPage/HeroSection";
 import MarketingCards from "@/components/LandingPage/MarketingCards";
 import PricingPage from "@/components/LandingPage/Pricing";
-import { GoogleGeminiEffect } from "@/components/LandingPage/GoogleGeminiEffect";
+import { Spotlight }  from "@/components/LandingPage/Spotlight";
 
 export default function Home() {
   return (
     <PageWrapper>
+      <div className="mt-[1rem] p-3">
+      <Spotlight />
+      </div>
       <div className="mt-[1rem] p-3">
         <HeroSection />
       </div>
@@ -28,9 +31,7 @@ export default function Home() {
       <div className="flex justify-center items-center w-full mt-[5rem] mb-[9rem]">
         <AccordionComponent />
       </div>
-      <div className="flex justify-center items-center w-full mt-[5rem] mb-[9rem]">
-        <GoogleGeminiEffect pathLengths={[]} />
-      </div>
+      
       {/* <div className="w-full">
         <Footer />
       </div> */}
