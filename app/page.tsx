@@ -1,6 +1,3 @@
-"use client";
-
-import React from "react";
 import PageWrapper from "@/components/Container/PageWrapper";
 import { AccordionComponent } from "@/components/LandingPage/AccordionComponent";
 import BlogSample from "@/components/LandingPage/BlogSamples";
@@ -8,13 +5,14 @@ import Footer from "@/components/LandingPage/Footer";
 import HeroSection from "@/components/LandingPage/HeroSection";
 import MarketingCards from "@/components/LandingPage/MarketingCards";
 import PricingPage from "@/components/LandingPage/Pricing";
-import { Spotlight }  from "@/components/ui/Spotlight";
+import {SpotlightPreview} from "@/components/LandingPage/SpotlightPreview";  // Import SpotlightPreview
+
 
 export default function Home() {
   return (
     <PageWrapper>
-      <div className="mt-[1rem] p-3">
-      <Spotlight />
+<div className="mt-[1rem] p-3">
+        <SpotlightPreview />
       </div>
       <div className="mt-[1rem] p-3">
         <HeroSection />
@@ -31,7 +29,6 @@ export default function Home() {
       <div className="flex justify-center items-center w-full mt-[5rem] mb-[9rem]">
         <AccordionComponent />
       </div>
-      
       {/* <div className="w-full">
         <Footer />
       </div> */}
