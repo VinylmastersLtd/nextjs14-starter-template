@@ -8,7 +8,7 @@ import Footer from "@/components/LandingPage/Footer";
 import HeroSection from "@/components/LandingPage/HeroSection";
 import MarketingCards from "@/components/LandingPage/MarketingCards";
 import PricingPage from "@/components/LandingPage/Pricing";
-import { Spotlight }  from "@/components/LandingPage/Spotlight";
+import { Spotlight }  from "@/components/ui/Spotlight";
 
 export default function Home() {
   return (
